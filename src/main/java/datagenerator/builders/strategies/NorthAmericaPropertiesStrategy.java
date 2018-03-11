@@ -1,6 +1,8 @@
 package datagenerator.builders.strategies;
 
+import datagenerator.builders.PersonNamesBuilder;
 import datagenerator.mappings.ProfessionSalaries;
+import datagenerator.model.person.names.PersonNamesContainer;
 import datagenerator.model.person.properties.BaseProperties;
 import datagenerator.model.person.properties.CountrySpecificProperties;
 import datagenerator.model.person.Person;
@@ -21,9 +23,12 @@ public class NorthAmericaPropertiesStrategy extends ContinentStrategy implements
     private static final BigDecimal SALLARY_INDEX = new BigDecimal("0.95");
     private static final int HEIGHT_INDEX = 10;
 
-    private List<String> manNames = Arrays.asList("John", "Tom", "Stanley", "Kevin", "Andrew");
-    private List<String> womanNames = Arrays.asList("Alice", "Jenifer", "Jane", "Sandy", "April");
-    private List<String> surnames = Arrays.asList("Smith", "Kovalsky", "Musk", "Gates", "Kubrick");
+    public NorthAmericaPropertiesStrategy() {
+        PersonNamesContainer namesBuilder = new PersonNamesBuilder().get();
+        manNames = namesBuilder.getMaleNames().getNorthAmericaNemes();
+        womanNames = namesBuilder.getFemaleNames().getNorthAmericaNemes();
+        surnames = namesBuilder.getSurnames().getNorthAmericaSurnames();
+    }
 
     @Override
     public CountrySpecificProperties generate(BaseProperties properties) {

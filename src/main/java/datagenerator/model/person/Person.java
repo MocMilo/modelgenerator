@@ -13,7 +13,7 @@ public class Person {
     private String surname;
     private Gender gender;
     private LocalDate dateOfBirth;
-    private BigDecimal sallary;
+    private BigDecimal salary;
     private int hight;
     private float iqIndex;
     private double fbRank;
@@ -49,8 +49,8 @@ public class Person {
         return dateOfBirth;
     }
 
-    public BigDecimal getSallary() {
-        return sallary;
+    public BigDecimal getSalary() {
+        return salary;
     }
 
     public int getHight() {
@@ -90,7 +90,7 @@ public class Person {
         this.surname = surname;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        this.sallary = sallary;
+        this.salary = sallary;
         this.hight = hight;
         this.iqIndex = iqIndex;
         this.fbRank = fbRank;
@@ -115,7 +115,7 @@ public class Person {
                 Objects.equals(surname, person.surname) &&
                 gender == person.gender &&
                 Objects.equals(dateOfBirth, person.dateOfBirth) &&
-                Objects.equals(sallary, person.sallary) &&
+                Objects.equals(salary, person.salary) &&
                 profession == person.profession &&
                 bodyType == person.bodyType &&
                 country == person.country &&
@@ -127,7 +127,7 @@ public class Person {
     @Override
     public int hashCode() {
 
-        return Objects.hash(Id, name, surname, gender, dateOfBirth, sallary, hight, iqIndex, fbRank, profession, bodyType, country, hairColour, eyesColour, friends);
+        return Objects.hash(Id, name, surname, gender, dateOfBirth, salary, hight, iqIndex, fbRank, profession, bodyType, country, hairColour, eyesColour, friends);
     }
 
     @Override
@@ -138,7 +138,7 @@ public class Person {
                 ", surname='" + surname + '\'' +
                 ", gender=" + gender +
                 ", dateOfBirth=" + dateOfBirth +
-                ", sallary=" + sallary +
+                ", salary=" + salary +
                 ", hight=" + hight +
                 ", iqIndex=" + iqIndex +
                 ", fbRank=" + fbRank +

@@ -1,6 +1,8 @@
 package datagenerator.builders.strategies;
 
+import datagenerator.builders.PersonNamesBuilder;
 import datagenerator.mappings.ProfessionSalaries;
+import datagenerator.model.person.names.PersonNamesContainer;
 import datagenerator.model.person.properties.BaseProperties;
 import datagenerator.model.person.Person;
 import datagenerator.model.person.enums.BodyType;
@@ -22,9 +24,12 @@ public class AsianSpecificPropertiesStrategy extends ContinentStrategy
     private static final BigDecimal SALLARY_INDEX = new BigDecimal("0.65");
     private static final int HEIGHT_INDEX = 8;
 
-    private List<String> manNames = Arrays.asList("Liu", "Jet", "Bruce", "Jin", "Jackie");
-    private List<String> womanNames = Arrays.asList("Akemi", "Asha", "Azumi", "Kayo", "Ki");
-    private List<String> surnames = Arrays.asList("Chiu", "Lee", "Chan", "Wong", "Zoeng");
+    public AsianSpecificPropertiesStrategy() {
+        PersonNamesContainer namesBuilder = new PersonNamesBuilder().get();
+        manNames = namesBuilder.getMaleNames().getAsianNames();
+        womanNames = namesBuilder.getFemaleNames().getAsianNames();
+        surnames = namesBuilder.getSurnames().getAsianSurnames();
+    }
 
     @Override
     public CountrySpecificProperties generate(BaseProperties properties) {

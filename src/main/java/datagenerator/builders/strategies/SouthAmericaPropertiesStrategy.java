@@ -1,10 +1,12 @@
 package datagenerator.builders.strategies;
 
+import datagenerator.builders.PersonNamesBuilder;
 import datagenerator.mappings.ProfessionSalaries;
 import datagenerator.model.person.Person;
 import datagenerator.model.person.enums.BodyType;
 import datagenerator.model.person.enums.EyesColour;
 import datagenerator.model.person.enums.HairColour;
+import datagenerator.model.person.names.PersonNamesContainer;
 import datagenerator.model.person.properties.BaseProperties;
 import datagenerator.model.person.properties.CountrySpecificProperties;
 
@@ -21,9 +23,13 @@ public class SouthAmericaPropertiesStrategy extends ContinentStrategy implements
     private static final BigDecimal SALLARY_INDEX = new BigDecimal("0.80");
     private static final int HEIGHT_INDEX = 9;
 
-    private List<String> manNames = Arrays.asList("Felipe", "Diego", "Adriano", "Agusto", "Benito");
-    private List<String> womanNames = Arrays.asList("Camilla", "Celia", "Constance", "Diana", "April");
-    private List<String> surnames = Arrays.asList("Rodrigez", "Cortez", "Angulis", "Bellasis", "Ferbras");
+    public SouthAmericaPropertiesStrategy() {
+
+        PersonNamesContainer namesBuilder = new PersonNamesBuilder().get();
+        manNames = namesBuilder.getMaleNames().getSouthAmericaNames();
+        womanNames = namesBuilder.getFemaleNames().getSouthAmericaNames();
+        surnames = namesBuilder.getSurnames().getSouthAmericaSurnames();
+    }
 
     @Override
     public CountrySpecificProperties generate(BaseProperties properties) {
