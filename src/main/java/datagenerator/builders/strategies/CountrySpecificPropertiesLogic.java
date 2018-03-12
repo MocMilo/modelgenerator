@@ -13,6 +13,8 @@ public class CountrySpecificPropertiesLogic {
     private static NorthAmericaPropertiesStrategy napStrategy = new NorthAmericaPropertiesStrategy();
     private static AsianSpecificPropertiesStrategy apStrategy = new AsianSpecificPropertiesStrategy();
     private static SouthAmericaPropertiesStrategy sapStrategy = new SouthAmericaPropertiesStrategy();
+    private static AfricaPropertiesStrategy afpStrategy = new AfricaPropertiesStrategy();
+    private static MiddleEastPropertiesStrategy meStrategy = new MiddleEastPropertiesStrategy();
 
     static {
         logic.put(Country.USA, napStrategy);
@@ -31,17 +33,17 @@ public class CountrySpecificPropertiesLogic {
         logic.put(Country.Brasil, sapStrategy);
         logic.put(Country.Venesuela, sapStrategy);
         logic.put(Country.Chile, sapStrategy);
-        logic.put(Country.Kongo, napStrategy);
-        logic.put(Country.RSA, napStrategy);
-        logic.put(Country.Ethiopia, napStrategy);
+        logic.put(Country.Kongo, afpStrategy);
+        logic.put(Country.RSA, afpStrategy);
+        logic.put(Country.Ethiopia, afpStrategy);
         logic.put(Country.Slovakia, napStrategy);
         logic.put(Country.Hungary, napStrategy);
         logic.put(Country.Austria, napStrategy);
         logic.put(Country.Portugal, sapStrategy);
-        logic.put(Country.Israel, napStrategy);
-        logic.put(Country.Iraq, napStrategy);
-        logic.put(Country.Katar, napStrategy);
-        logic.put(Country.SaudiArabia, napStrategy);
+        logic.put(Country.Israel, meStrategy);
+        logic.put(Country.Iraq, meStrategy);
+        logic.put(Country.Katar, meStrategy);
+        logic.put(Country.SaudiArabia, meStrategy);
         logic.put(Country.China, apStrategy);
         logic.put(Country.SouthKorea, apStrategy);
         logic.put(Country.Japan, apStrategy);

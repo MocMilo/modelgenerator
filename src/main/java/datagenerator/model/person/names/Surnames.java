@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Surnames {
-    List<String> asianSurnames = new ArrayList<>();
-    List<String> northAmericaSurnames = new ArrayList<>();
-    List<String> southAmericaSurnames = new ArrayList<>();
+    private List<String> asianSurnames = new ArrayList<>();
+    private List<String> northAmericaSurnames = new ArrayList<>();
+    private List<String> southAmericaSurnames = new ArrayList<>();
+    private List<String> africaNames = new ArrayList<>();
+    private List<String> middleEastNames = new ArrayList<>();
 
     public List<String> getAsianSurnames() {
         return asianSurnames;
@@ -32,5 +34,20 @@ public class Surnames {
         this.southAmericaSurnames = southAmericaSurnames;
     }
 
+    public List<String> getAfricaNames() {
+        return africaNames;
+    }
+
+    public void setAfricaNames(List<String> africaNames) {
+        this.africaNames = africaNames;
+    }
+
+    public List<String> getMiddleEastNames() {
+        return middleEastNames;
+    }
+
+    public void setMiddleEastNames(List<String> middleEastNames) {
+        this.middleEastNames = middleEastNames;
+    }
 }
 

@@ -18,16 +18,16 @@ import java.util.concurrent.ThreadLocalRandom;
 import static datagenerator.model.person.enums.Gender.W;
 
 
-public class SouthAmericaPropertiesStrategy extends ContinentStrategy implements ICountrySpecificProperties {
+public class AfricaPropertiesStrategy extends ContinentStrategy implements ICountrySpecificProperties {
 
-    private static final BigDecimal SALLARY_INDEX = new BigDecimal("0.80");
+    private static final BigDecimal SALLARY_INDEX = new BigDecimal("0.20");
     private static final int HEIGHT_INDEX = 9;
 
-    public SouthAmericaPropertiesStrategy() {
+    public AfricaPropertiesStrategy() {
         PersonNamesContainer namesBuilder = new PersonNamesBuilder().get();
-        manNames = namesBuilder.getMaleNames().getSouthAmericaNames();
-        womanNames = namesBuilder.getFemaleNames().getSouthAmericaNames();
-        surnames = namesBuilder.getSurnames().getSouthAmericaSurnames();
+        manNames = namesBuilder.getMaleNames().getAfricaNames();
+        womanNames = namesBuilder.getFemaleNames().getAfricaNames();
+        surnames = namesBuilder.getSurnames().getAfricaNames();
     }
 
     @Override
@@ -63,6 +63,9 @@ public class SouthAmericaPropertiesStrategy extends ContinentStrategy implements
         List<HairColour> availableHair = new ArrayList<>(Arrays.asList(HairColour.values()));
         availableHair.remove(HairColour.BrightBlond);
         availableHair.remove(HairColour.Blond);
+        availableHair.remove(HairColour.Brown);
+        availableHair.remove(HairColour.DarkBrown);
+        availableHair.remove(HairColour.Red);
         final int i = new Random().nextInt(availableHair.size());
         return availableHair.get(i);
     }
