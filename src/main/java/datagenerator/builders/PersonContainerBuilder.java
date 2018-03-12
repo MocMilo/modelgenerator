@@ -10,11 +10,12 @@ import java.util.List;
 public class PersonContainerBuilder {
     private PersonGenerator generator = new PersonGenerator();
     private PersonContainer container;
+    private static final int AMOUNT_OF_GENERATED_PEOPLE = 1000;
 
     public PersonContainer getContainer() {
         List<Person> personList = new ArrayList();
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < AMOUNT_OF_GENERATED_PEOPLE; i++) {
             Person random = generator.generate(i);
             personList.add(random);
         }

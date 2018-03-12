@@ -4,15 +4,6 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public final class Transfer {
-    /*
-     * making class immutable:
-     * - private fields no setters
-     * - mutable fields make final
-     * - populate fields by constructor
-     * - make class final to prevent inheritance
-     *
-     * */
-
     private final int id;
     private final int accountId;
     private final BigDecimal moneyValue;
