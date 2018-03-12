@@ -10,7 +10,7 @@ import java.util.List;
 public class PersonContainerBuilder {
     private PersonGenerator generator = new PersonGenerator();
     private PersonContainer container;
-    private static final int AMOUNT_OF_GENERATED_PEOPLE = 1000;
+    private static final int AMOUNT_OF_GENERATED_PEOPLE = 300;
 
     public PersonContainer getContainer() {
         List<Person> personList = new ArrayList();
