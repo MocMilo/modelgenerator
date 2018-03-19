@@ -22,8 +22,6 @@ import static java.util.stream.Collectors.maxBy;
 
 
 public class App {
-
-
     public static void main(String[] args) throws IOException {
         // new FileUtil().saveModelFile(); // uncomment to save new generated data to model file
         // new FileUtil().savePersonNamesContainerToFile(); //
@@ -226,6 +224,4 @@ public class App {
         }
         return out;
     }
-
-
 }
