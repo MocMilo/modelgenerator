@@ -1,6 +1,7 @@
 package datagenerator.model.person;
 
 import datagenerator.model.person.enums.*;
+import training.java8streams.equalsHashcode.PersonA;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -8,7 +9,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Set;
 
-public class Person implements Serializable{
+public class Person implements Serializable, Comparable {
     private int Id;
     private String name;
     private String surname;
@@ -150,5 +151,10 @@ public class Person implements Serializable{
                 ", eyesColour=" + eyesColour +
                 ", friends=" + friends +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return ((Person) o).getSalary().compareTo(this.getSalary());
     }
 }

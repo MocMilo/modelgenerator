@@ -1,5 +1,7 @@
 package training.java8streams.equalsHashcode;
 
+import datagenerator.model.person.Person;
+
 import java.util.Objects;
 
 public class PersonA extends BasePerson {
@@ -52,4 +54,15 @@ public class PersonA extends BasePerson {
     public int hashCode() {
         return Objects.hash(Id, name, age);
     }
+
+
 }
+
+/*
+* 	public int compareTo(Fruit compareFruit) {
+
+		int compareQuantity = ((Fruit) compareFruit).getQuantity();
+
+		//ascending order
+		return this.quantity - compareQuantity;
+* */

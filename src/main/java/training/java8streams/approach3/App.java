@@ -1,5 +1,6 @@
 package training.java8streams.approach3;
 
+import datagenerator.builders.strategies.SouthAmericaPropertiesStrategy;
 import datagenerator.model.person.Person;
 import datagenerator.model.person.enums.Gender;
 import training.java8streams.approach1.FileUtil;
@@ -30,20 +31,18 @@ public class App {
         List<Person> personList = new FileUtil().getTasksModel();
         System.out.println("personListSize: " + personList.size());
 
+
+        Set<Person> sortedList = new TreeSet<>(personList);
+        // Person has to have comparable implemented to use in TreeSet otherwise exception
+        sortedList.forEach(System.out::println);
+
         // Task 1
-
         // Task 2
-
         // Task 3
-
         // Task 4
-
         // Task 5
-
         // Task 6
-
         // Task 7
-
         // Task 8
 
     }
