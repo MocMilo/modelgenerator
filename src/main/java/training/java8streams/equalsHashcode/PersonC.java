@@ -1,5 +1,7 @@
 package training.java8streams.equalsHashcode;
 
+import java.util.Objects;
+
 public class PersonC {
 
     private int Id;
@@ -34,5 +36,21 @@ public class PersonC {
 
     public void setHeight(int height) {
         this.height = height;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        PersonC personC = (PersonC) o;
+        return Id == personC.Id &&
+                height == personC.height &&
+                Objects.equals(surname, personC.surname);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(Id, surname, height);
     }
 }

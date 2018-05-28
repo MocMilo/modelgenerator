@@ -32,8 +32,12 @@ public class App {
 
         System.out.println("p1 hashcode:" + p1.hashCode());  // p1 hashcode:2039781048
         System.out.println("pB hashcode:" + pB.hashCode());  // pB hashcode:2039781048
-        System.out.println("p3 hashcode:" + p3.hashCode());  // p3 hashcode:666988784   // field names different!
-                                                                                        // different hashcode!
+        System.out.println("p3 hashcode:" + p3.hashCode());  // p3 hashcode:2039781048  // field names different,
+                                                                                        // but still same types!
+                                                                                        // the same hashcode if Person
+                                                                                        // has the hashcode implemented!
+                                                                                        // if hashcode not implemented
+                                                                                        // different hashcode
         // the same class object but different values:
         p1.setId(2);
         System.out.println("p1 hashcode:" + p1.hashCode() + " p1 after set new Id value");  // p1 hashcode:2039782009
