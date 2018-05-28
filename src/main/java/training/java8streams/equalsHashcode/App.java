@@ -16,6 +16,7 @@ public class App {
 
         PersonA p1 = new PersonA(1, "Danny", 20);
         PersonA p2 = new PersonA(1, "Danny", 20);
+        PersonC p3 = new PersonC(1, "Danny", 20);
 
         // object of different class PersonB but with the same implementation
         // (the same fields with the same values)
@@ -30,11 +31,12 @@ public class App {
         System.out.println("p1 equals p3 check: " + p1.equals(pB));  // false (same values but different type)
 
         System.out.println("p1 hashcode:" + p1.hashCode());  // p1 hashcode:2039781048
-        System.out.println("pB hashcode:" + pB.hashCode());  // p3 hashcode:2039781048
-
+        System.out.println("pB hashcode:" + pB.hashCode());  // pB hashcode:2039781048
+        System.out.println("p3 hashcode:" + p3.hashCode());  // p3 hashcode:666988784   // field names different!
+                                                                                        // different hashcode!
         // the same class object but different values:
         p1.setId(2);
-        System.out.println("p1 hashcode:" + p1.hashCode());  // p1 hashcode:2039782009
+        System.out.println("p1 hashcode:" + p1.hashCode() + " p1 after set new Id value");  // p1 hashcode:2039782009
 
 
         Set<BasePerson> check = new HashSet<>();
@@ -45,31 +47,31 @@ public class App {
 
 
         // immutable / mutable
-        Integer i  = 5;
+        Integer i = 5;
         PersonB personB = new PersonB(1, "Alice", 5);
 
-        System.out.println("integer before method: "+ i.hashCode());
-        System.out.println("personB before method: "+ personB.hashCode());
+        System.out.println("integer before method: " + i.hashCode());
+        System.out.println("personB before method: " + personB.hashCode());
 
         changerOne(personB);
         changerTwo(i);
-        System.out.println("check age of personB: " +personB.getAge());
-        System.out.println("check integer i: " +i);
+        System.out.println("check age of personB: " + personB.getAge());
+        System.out.println("check integer i: " + i);
 
-        System.out.println("PersonB after method: " +personB.hashCode());
+        System.out.println("PersonB after method: " + personB.hashCode());
 
         System.out.println("string hashcode:" + new String("xyz").hashCode());
         System.out.println("string hashcode:" + new String("xyz").hashCode());
 
     }
 
-    private static void changerOne(PersonB personB){
+    private static void changerOne(PersonB personB) {
         personB.setAge(55);
     }
 
-    private static void changerTwo(Integer i){
+    private static void changerTwo(Integer i) {
         i = 55;
-        System.out.println("integer inside method after change: "+ i.hashCode());
+        System.out.println("integer inside method after change: " + i.hashCode());
     }
 
 
