@@ -25,7 +25,7 @@ public class SortingTraining {
 
         System.out.println("Person Set size: " + personTreeSet.size()); // why only 49 elements ??
 
-        // checking code ln:22
+        // checking code ln:23
         int u = personList.stream()
                 .map(Person::getHight)
                 .distinct()
