@@ -6,10 +6,17 @@ import training.java8streams.equalsHashcode.PersonA;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Comparator;
 import java.util.Objects;
 import java.util.Set;
 
-public class Person implements Serializable, Comparable {
+public class Person implements Serializable //, Comparable<Person>
+{
+/*  public static final Comparator<Person> BY_SALARY = Comparator.comparing(Person::getSalary);
+    public static final Comparator<Person> BY_AGE = Comparator.comparing(Person::getDateOfBirth);
+    public static final Comparator<Person> BY_NAME_ASC = Comparator.comparing(Person::getName);
+    public static final Comparator<Person> BY_BODY_TYPE = Comparator.comparing(Person::getBodyType);*/
+
     private int Id;
     private String name;
     private String surname;
@@ -153,8 +160,11 @@ public class Person implements Serializable, Comparable {
                 '}';
     }
 
-    @Override
-    public int compareTo(Object o) {
-        return ((Person) o).getSalary().compareTo(this.getSalary());
-    }
+
+
+
+/*    @Override
+    public int compareTo(Person o) {
+        return this.getSalary().compareTo(o.getSalary());
+    }*/
 }
