@@ -2,7 +2,7 @@ package training.designpatterns.simplefactory.product;
 
 import java.time.LocalDate;
 
-public class StandardLoan extends Product {
+public class StandardLoan implements Product {
     private String name;
     private LocalDate expDate;
 

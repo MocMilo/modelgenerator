@@ -5,6 +5,7 @@ import java.math.RoundingMode;
 
 
 public class CurrencyLoanPricingGenerator extends PricingGenerator {
+
     // @Inject
     // CurrencyService currencyService;
     // @Inject
@@ -17,6 +18,5 @@ public class CurrencyLoanPricingGenerator extends PricingGenerator {
         // ...calculation
         return new BigDecimal("2000.00").setScale(2, RoundingMode.HALF_EVEN);
     }
-
 
 }

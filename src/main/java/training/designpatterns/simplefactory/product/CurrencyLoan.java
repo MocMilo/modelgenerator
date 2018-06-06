@@ -1,6 +1,6 @@
 package training.designpatterns.simplefactory.product;
 
-public class CurrencyLoan extends Product {
+public class CurrencyLoan implements Product {
     private String name;
     private Integer xyz;
 
