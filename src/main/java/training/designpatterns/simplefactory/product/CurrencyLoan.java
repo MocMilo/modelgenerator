@@ -1,8 +1,10 @@
 package training.designpatterns.simplefactory.product;
 
 public class CurrencyLoan implements Product {
-    private String name;
+
     private Integer xyz;
+    private String name;
+
 
     public String getName() {
         return name;

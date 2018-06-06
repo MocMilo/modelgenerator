@@ -24,7 +24,7 @@ public class App {
         mapFromExternalService.putIfAbsent(StandardLoan.class, new StandardLoanPricingGenerator());
 
         // 2. injecting map to pricing factory (flexible way of "configuring" factory)
-        PriceFactory priceFactory = new PriceFactory(mapFromExternalService);
+        PricingGeneratorFactory pricingGeneratorFactory = new PricingGeneratorFactory(mapFromExternalService);
 
         // 3. HARDCODED
         // preparation products to process
@@ -37,7 +37,7 @@ public class App {
         // 4. EXECUTION USING FACTORY
         // produces factory of PriceGenerators dependent on current Product in list
         products.forEach(x -> {
-            PricingGenerator pricingGenerator = priceFactory.getPriceGenerator(x.getClass());
+            PricingGenerator pricingGenerator = pricingGeneratorFactory.getPriceGenerator(x.getClass());
             System.out.println(pricingGenerator.calculatePrice());
         });
     }

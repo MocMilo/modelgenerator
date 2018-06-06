@@ -6,11 +6,11 @@ import training.designpatterns.simplefactory.product.Product;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PriceFactory {
+public class PricingGeneratorFactory {
     private Map<Class<? extends Product>, PricingGenerator> knownGenerators = new HashMap<>();
 
     // can be @autowired here. Simulation as if it was injected in here
-    public PriceFactory(Map<Class<? extends Product>, PricingGenerator> generatorMap) {
+    public PricingGeneratorFactory(Map<Class<? extends Product>, PricingGenerator> generatorMap) {
         knownGenerators.putAll(generatorMap);
     }
 
