@@ -2,7 +2,6 @@ package training.designpatterns.simplefactory;
 
 import java.math.BigDecimal;
 
-public interface GenerateProduct {
+public interface GeneratePrice {
         BigDecimal calculatePrice();
-        String generateAgreement();
 }

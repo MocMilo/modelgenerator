@@ -4,8 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
-public class CurrencyLoanGenerator extends ProductGenerator {
-
+public class CurrencyLoanPricingGenerator extends PricingGenerator {
     // @Inject
     // CurrencyService currencyService;
     // @Inject
@@ -19,9 +18,5 @@ public class CurrencyLoanGenerator extends ProductGenerator {
         return new BigDecimal("2000.00").setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    @Override
-    public String generateAgreement() {
-        // agreement generating...
-        return "Agreement content for CurrencyLoan";
-    }
+
 }

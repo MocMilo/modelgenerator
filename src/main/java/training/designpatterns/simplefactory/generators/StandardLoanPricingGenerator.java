@@ -3,7 +3,7 @@ package training.designpatterns.simplefactory.generators;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class StandardLoanGenerator extends ProductGenerator {
+public class StandardLoanPricingGenerator extends PricingGenerator {
 
     // @Inject
     // ChargeService chargeService;
@@ -15,11 +15,6 @@ public class StandardLoanGenerator extends ProductGenerator {
         return new BigDecimal("1000.00").setScale(2, RoundingMode.HALF_EVEN);
     }
 
-    @Override
-    public String generateAgreement() {
-        // agrement generating...
 
-        return "Agreement content for StandartLoan";
-    }
 }
 
