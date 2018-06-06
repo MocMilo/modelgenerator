@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class MapOperations {
 
     public static void main(String[] args) throws IOException {
-        Map<Integer, Person> personMap = new HashMap<>();
+        Map<String, Person> personMap = new HashMap<>();
         List<Person> people = new FileUtil().getTasksModel();
 
 /*        people.forEach( x -> {
@@ -19,11 +19,9 @@ public class MapOperations {
 
         System.out.println(people.size());
 
-
-
-
         for(int i = 0; i <  people.size(); i++){
-            personMap.put(i, people.get(i));
+            String s = "xyzzzz"+i;
+            personMap.put(s, people.get(i));
         }
 
         System.out.println(personMap.size());
@@ -35,8 +33,15 @@ public class MapOperations {
                 .map(x -> x.getValue())
                 .collect(Collectors.toList());
 
-        System.out.println("+++++++++++++");
+        System.out.println("###########");
         new ArrayList<>(personMap.values()).forEach(System.out::println);
+        System.out.println("***********");
+
+        // mapa ma w key hashcode. Jeżeli typem key jest integer to jest to ten integer,
+        // jeżeli typem jest np. string, to key jest również intigerem (wyliczony hashcode z tego
+        // Stringa)
+        new ArrayList<>(personMap.keySet()).forEach(x -> System.out.println(x.hashCode()));
+
 
     }
 }
