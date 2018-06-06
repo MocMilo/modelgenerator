@@ -17,7 +17,7 @@ public class App {
     public static void main(String[] args) {
 
         // 1. HARDCODED MAP
-        // (part of external service that provides Price Generators)
+        // (simulates part of external service that provides Price Generators)
 
         Map<Class<? extends Product>, PricingGenerator> mapFromExternalService = new HashMap<>();
         mapFromExternalService.putIfAbsent(CurrencyLoan.class, new CurrencyLoanPricingGenerator());
