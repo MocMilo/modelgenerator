@@ -6,6 +6,10 @@ import java.math.RoundingMode;
 
 public class CurrencyLoanPricingGenerator implements PricingGenerator {
 
+    // getType()  ENUM   ....class
+
+    // to tworząc przekazując
+
     // @Inject
     // CurrencyService currencyService;
     // @Inject
