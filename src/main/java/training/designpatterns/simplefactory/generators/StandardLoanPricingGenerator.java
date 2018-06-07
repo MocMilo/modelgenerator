@@ -3,7 +3,7 @@ package training.designpatterns.simplefactory.generators;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class StandardLoanPricingGenerator extends PricingGenerator {
+public class StandardLoanPricingGenerator implements PricingGenerator {
 
     // @Inject
     // ChargeService chargeService;

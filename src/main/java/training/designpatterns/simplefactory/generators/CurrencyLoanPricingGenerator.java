@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
-public class CurrencyLoanPricingGenerator extends PricingGenerator {
+public class CurrencyLoanPricingGenerator implements PricingGenerator {
 
     // @Inject
     // CurrencyService currencyService;
