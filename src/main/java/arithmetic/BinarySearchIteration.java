@@ -19,7 +19,7 @@ public class BinarySearchIteration {
         if (searchedItem < table[0]) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        if (searchedItem > table[table.length-1]) {
+        if (searchedItem > table[table.length - 1]) {
             throw new ArrayIndexOutOfBoundsException();
         }
         // optimistic case
@@ -27,14 +27,13 @@ public class BinarySearchIteration {
             return initMiddleIndex;
         }
 
-        // SEARCH
+        // SEARCH...
         // midIndex is supposed to be equal with searched item in a loop
 
         // the same algorithm works for "foreach" and "for" loop
         // for (int i : table){...}
-        // for (int i = 0; i < table.length; i++)
+        // for (int i = 0; i < table.length; i++){...}
 
-        int whileLoopResult;
         while (true) {                                   // escape with return statement
             int midIndex = (startIndex + endIndex) / 2;  // new midIndex for every iteration
             if (table[midIndex] < searchedItem) {
@@ -42,11 +41,9 @@ public class BinarySearchIteration {
             } else if (table[midIndex] > searchedItem) {
                 endIndex = midIndex - 1;
             } else if (table[midIndex] == searchedItem) {
-                whileLoopResult = searchedItem;
-                break;
+                return searchedItem;
             }
         }
-        return whileLoopResult;
     }
 }
 
