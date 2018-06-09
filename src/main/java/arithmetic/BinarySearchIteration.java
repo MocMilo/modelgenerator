@@ -1,6 +1,6 @@
-package arithmetics;
+package arithmetic;
 
-public class BinarySearch {
+public class BinarySearchIteration {
 
     public static void main(String[] args) {
         int[] table = {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -16,16 +16,23 @@ public class BinarySearch {
         if (table.length == 0) {
             throw new IllegalArgumentException();
         }
-        if (searchedItem > table.length) {
+        if (searchedItem < table[0]) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        // optimistic
+        if (searchedItem > table[table.length-1]) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+        // optimistic case
         if (searchedItem == initMiddleIndex) {
             return initMiddleIndex;
         }
 
         // SEARCH
         // midIndex is supposed to be equal with searched item in a loop
+
+        // the same algorithm works for "foreach" and "for" loop
+        // for (int i : table){...}
+        // for (int i = 0; i < table.length; i++)
 
         int whileLoopResult;
         while (true) {                                   // escape with return statement
@@ -39,35 +46,7 @@ public class BinarySearch {
                 break;
             }
         }
-        System.out.println("while result: " + whileLoopResult);
-
-        int foreachResult = 0;
-        for (int i : table) {
-            int midIndex = (startIndex + endIndex) / 2;
-            if (table[midIndex] < searchedItem) {
-                startIndex = midIndex + 1;
-            } else if (table[midIndex] > searchedItem) {
-                endIndex = midIndex - 1;
-            } else if (table[midIndex] == searchedItem) {
-                foreachResult = searchedItem;
-            }
-        }
-        System.out.println("foreach loop: " + foreachResult);
-
-        int forLoopResult = 0;
-        for (int i = 0; i < table.length; i++) {
-            int midIndex = (startIndex + endIndex) / 2;
-            if (table[midIndex] < searchedItem) {
-                startIndex = midIndex + 1;
-            } else if (table[midIndex] > searchedItem) {
-                endIndex = midIndex - 1;
-            } else if (table[midIndex] == searchedItem) {
-                return searchedItem;
-            }
-        }
-        System.out.println("for loop result: " + forLoopResult);
-
-        return forLoopResult;
+        return whileLoopResult;
     }
 }
 
