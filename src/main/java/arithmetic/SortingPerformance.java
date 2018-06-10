@@ -59,7 +59,6 @@ public class SortingPerformance {
     private static void checkTime(Consumer<Void> aVoid) {
         long startTime = System.nanoTime();
         aVoid.accept(null);
-
         final long duration = System.nanoTime() - startTime;
         final double seconds = ((double) duration / 1000000000);
         out.println("\t\t" + new DecimalFormat("#.##########").format(seconds) + " seconds");
