@@ -45,7 +45,6 @@ public class Main {
                     .orElse(null);
 
         });
-
         // remove element
         System.out.println(" remove element");
         checkTime((v) -> arrayList.remove(arrayListElement));
@@ -54,11 +53,8 @@ public class Main {
     }
 
     private static void checkTime(Consumer<Void> aVoid) {
-
         long startTime = System.nanoTime();
-
         aVoid.accept(null);
-
         final long duration = System.nanoTime() - startTime;
         final double seconds = ((double)duration / 1000000000);
         System.out.println("\t\t" + new DecimalFormat("#.##########").format(seconds) + " seconds");
@@ -71,12 +67,9 @@ public class Main {
      * @return
      */
     private static void populateCollection(Collection collection, int size) {
-
         for (int i = 1; i <= size; i++) {
             String randomString = UUID.randomUUID().toString();
             collection.add(randomString);
         }
-
     }
-
 }

@@ -1,4 +1,4 @@
-package arithmetic;
+package arithmetic.binarysearch;
 
 public class BinarySearchIteration {
 
@@ -10,16 +10,16 @@ public class BinarySearchIteration {
     public static int search(int[] table, int searchedItem) {
         int startIndex = 0;
         int endIndex = table.length - 1;
-        int initMiddleIndex = endIndex / 2;
+        int initMiddleIndex = startIndex + endIndex / 2;
 
         // exceptional situations
         if (table.length == 0) {
             throw new IllegalArgumentException();
         }
-        if (searchedItem < table[0]) {
+        if (searchedItem < table[startIndex]) {
             throw new ArrayIndexOutOfBoundsException();
         }
-        if (searchedItem > table[table.length - 1]) {
+        if (searchedItem > table[endIndex]) {
             throw new ArrayIndexOutOfBoundsException();
         }
         // optimistic case

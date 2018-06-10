@@ -1,7 +1,8 @@
-package performance;
+package arithmetic;
 
-import arithmetic.BubbleSorting;
+import arithmetic.bubblesorting.BubbleSorting;
 import datagenerator.model.person.Person;
+import performance.wormupjvm.ManualClassLoader;
 import training.java8streams.approach1.FileUtil;
 
 import java.io.IOException;
@@ -14,7 +15,6 @@ import static java.lang.System.out;
 
 
 public class SortingPerformance {
-    private static int WORMUP_ITERATIONS = 20000000;
     private static int TEST_COLLECTION_LIMIT = 200;   // max 300
 
     public static void main(String[] args) throws IOException {
@@ -67,8 +67,6 @@ public class SortingPerformance {
 
     private static void wormUpJVM() {
         out.println("Wait, JVM worm up...");
-        for (int j = 0; j < WORMUP_ITERATIONS; j++) {
-            UUID.randomUUID().toString();
-        }
+        ManualClassLoader.load();
     }
 }

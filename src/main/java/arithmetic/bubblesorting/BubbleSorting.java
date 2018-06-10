@@ -1,4 +1,4 @@
-package arithmetic;
+package arithmetic.bubblesorting;
 
 import datagenerator.model.person.Person;
 import training.java8streams.approach1.FileUtil;

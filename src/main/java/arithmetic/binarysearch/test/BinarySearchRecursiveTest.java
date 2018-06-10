@@ -1,5 +1,6 @@
-package arithmetic;
+package arithmetic.binarysearch.test;
 
+import arithmetic.binarysearch.BinarySearchRecursive;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
