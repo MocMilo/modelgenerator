@@ -52,5 +52,6 @@ public class SortingTraining {
 
         //
         // personList.sort(Comparator.comparing(Person::getHight).reversed());
+
     }
 }

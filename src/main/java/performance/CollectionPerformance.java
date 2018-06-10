@@ -1,4 +1,4 @@
-package training.collectionperformance;
+package performance;
 
 import datagenerator.model.person.Person;
 import training.java8streams.approach1.FileUtil;
@@ -11,10 +11,8 @@ import java.util.List;
 public class CollectionPerformance {
 
     public static void main(String[] args) throws IOException {
-
         arrayListVsArrayListWithSizeInit();
         arrayListVsLinkedList();
-
     }
 
     static void arrayListVsArrayListWithSizeInit() throws IOException {
