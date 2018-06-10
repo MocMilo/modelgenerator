@@ -5,7 +5,6 @@ import arithmetic.binarysearch.BinarySearchRecursive;
 import performance.wormupjvm.ManualClassLoader;
 
 import java.text.DecimalFormat;
-import java.util.UUID;
 import java.util.function.Consumer;
 
 import static java.lang.System.out;
