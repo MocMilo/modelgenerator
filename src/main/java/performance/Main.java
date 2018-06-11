@@ -49,7 +49,6 @@ public class Main {
         System.out.println(" remove element");
         checkTime((v) -> arrayList.remove(arrayListElement));
         checkTime((v) -> linkedHashSet.remove(linkedHashSetElement));
-
     }
 
     private static void checkTime(Consumer<Void> aVoid) {

@@ -16,12 +16,7 @@ public class BinarySearchIteration {
         if (table.length == 0) {
             throw new IllegalArgumentException();
         }
-        if (searchedItem < table[startIndex]) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
-        if (searchedItem > table[endIndex]) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
+
         // optimistic case
         if (searchedItem == initMiddleIndex) {
             return initMiddleIndex;
@@ -34,7 +29,7 @@ public class BinarySearchIteration {
         // for (int i : table){...}
         // for (int i = 0; i < table.length; i++){...}
 
-        while (true) {                                   // escape with return statement
+        while (startIndex <= endIndex) {                                   // escape with return statement
             int midIndex = (startIndex + endIndex) / 2;  // new midIndex for every iteration
             if (table[midIndex] < searchedItem) {
                 startIndex = midIndex + 1;               // conditional index change
@@ -42,8 +37,13 @@ public class BinarySearchIteration {
                 endIndex = midIndex - 1;
             } else if (table[midIndex] == searchedItem) {
                 return searchedItem;
+            } else if ((endIndex - startIndex) == 0) {
+                System.out.println("value not found");
+                return -1;
             }
         }
+        System.out.println("value not found");
+        return -1;
     }
 }
 

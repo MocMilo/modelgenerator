@@ -19,23 +19,20 @@ public class BinarySearchIterationTest {
         BinarySearchIteration.search(table, 1);
     }
 
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void shouldThrowExceptionIfElementOutOfRightBound() {
+    @Test
+    public void shouldReturnErrorValueIfElementOutOfRightBound() {
         int[] table = {1, 2, 3};
-        BinarySearchIteration.search(table, 4);
-    }
-
-    @Test(expected = ArrayIndexOutOfBoundsException.class)
-    public void shouldThrowExceptionIfNegativeElementOutLeftBound() {
-        int[] table = {1, 2, 3};
-        BinarySearchIteration.search(table, -1);
+        int searchedValue = BinarySearchIteration.search(table, 4);
+        assertThat(-1, equalTo(searchedValue));
     }
 
     @Test
-    public void shouldNotThrowExceptionIfElementOutOfBound() {
+    public void shouldReturnErrorValueIfNegativeElementOutLeftBound() {
         int[] table = {1, 2, 3};
-        BinarySearchIteration.search(table, 3);
+        int searchedValue = BinarySearchIteration.search(table, -3);
+        assertThat(-1, equalTo(searchedValue));
     }
+
 
     @Test
     public void shouldReturnProperResultForNegativeValue() {
@@ -51,10 +48,10 @@ public class BinarySearchIterationTest {
         assertThat(3, equalTo(searchedValue));
     }
 
-   /* @Test TODO reversed sorted
+    @Test //TODO reversed sorted
     public void shouldReturnProperResultForReversedSorting() {
         int[] table = {8, 7, 6, 5, 4, 3, 2, 1, 0, -1, -2, -3};
         int searchedValue = BinarySearchIteration.search(table, 3);
         assertThat(3, equalTo(searchedValue));
-    }*/
+    }
 }
