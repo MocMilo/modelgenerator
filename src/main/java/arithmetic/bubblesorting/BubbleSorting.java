@@ -27,12 +27,10 @@ public class BubbleSorting {
 
         Arrays.stream(sortedByComparator).forEach(x -> System.out.println(x.getName() + " " + x.getHight()));
 
-
-
-            Person[] sortedByField = sortPersonArray(people, "salary");
-            System.out.println("sorted by field");
-            Arrays.stream(sortedByField).forEach(x -> System.out.println(x.getName()
-                    + " " + x.getSalary()));
+        Person[] sortedByField = sortPersonArray(people, "salary");
+        System.out.println("sorted by field");
+        Arrays.stream(sortedByField).forEach(x -> System.out.println(x.getName()
+                + " " + x.getSalary()));
 
     }
 
