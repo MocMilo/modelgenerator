@@ -4,7 +4,8 @@ import arithmetic.binarysearch.BinarySearchIteration;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+
 
 public class BinarySearchIterationTest {
     @Test(expected = NullPointerException.class)
@@ -16,21 +17,21 @@ public class BinarySearchIterationTest {
     public void shouldNotThrowExceptionIfTableNotEmpty() {
         int[] table = {};
         int searchedValue = BinarySearchIteration.search(table, 1);
-        assertThat(-1, equalTo(searchedValue)); // TODO change places
+        assertThat(searchedValue, equalTo(-1));
     }
 
     @Test
     public void shouldReturnErrorValueIfElementOutOfRightBound() {
         int[] table = {1, 2, 3};
         int searchedValue = BinarySearchIteration.search(table, 4);
-        assertThat(-1, equalTo(searchedValue));
+        assertThat(searchedValue, equalTo(-1));
     }
 
     @Test
     public void shouldReturnErrorValueIfNegativeElementOutLeftBound() {
         int[] table = {1, 2, 3};
         int searchedValue = BinarySearchIteration.search(table, -3);
-        assertThat(-1, equalTo(searchedValue));
+        assertThat(searchedValue, equalTo(-1));
     }
 
 
@@ -38,14 +39,14 @@ public class BinarySearchIterationTest {
     public void shouldReturnProperResultForNegativeValue() {
         int[] table = {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8};
         int searchedValue = BinarySearchIteration.search(table, -2);
-        assertThat(1, equalTo(searchedValue));
+        assertThat(searchedValue, equalTo(1));
     }
 
     @Test
     public void shouldReturnProperResultForPositiveValue() {
         int[] table = {-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8};
         int searchedValue = BinarySearchIteration.search(table, 3);
-        assertThat(6, equalTo(searchedValue));
+        assertThat(searchedValue, equalTo(6));
     }
 
 
@@ -70,5 +71,4 @@ public class BinarySearchIterationTest {
         int searchedValue = BinarySearchIteration.search(table, 5);
         assertThat(searchedValue,equalTo( 4));
     }
-
 }

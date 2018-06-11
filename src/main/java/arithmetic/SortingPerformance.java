@@ -22,7 +22,7 @@ public class SortingPerformance {
         Person[] unsorted2 = getData();
         Person[] unsorted3 = getData();
 
-        wormUpJVM();
+        warmUpJVM();
 
         Comparator<Person> comparator = Comparator.comparing(Person::getHight);
         String comparisonField = "hight";
@@ -64,7 +64,7 @@ public class SortingPerformance {
         out.println("\t\t" + new DecimalFormat("#.##########").format(seconds) + " seconds");
     }
 
-    private static void wormUpJVM() {
+    private static void warmUpJVM() {
         out.println("Wait, JVM warm up...");
         ManualClassLoader.load();
     }

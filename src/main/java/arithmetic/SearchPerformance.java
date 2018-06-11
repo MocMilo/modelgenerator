@@ -16,7 +16,7 @@ public class SearchPerformance {
         int[] table =  generateData();
         int target = 5;
 
-        wormUpJVM();
+        warmUpJVM();
 
         System.out.println("BinarySearch - Recursive");
         System.out.println("BinarySearch - Iteration");
@@ -41,7 +41,7 @@ public class SearchPerformance {
         out.println("\t\t" + new DecimalFormat("#.##########").format(seconds) + " seconds");
     }
 
-    private static void wormUpJVM() {
+    private static void warmUpJVM() {
         out.println("Wait, JVM warm up...");
         ManualClassLoader.load();
     }

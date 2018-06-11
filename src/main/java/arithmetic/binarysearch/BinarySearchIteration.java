@@ -6,8 +6,8 @@ import java.util.Objects;
 public class BinarySearchIteration {
 
     public static void main(String[] args) {
-        int[] table = {1, 2, 3, 4, 5, 6, 7, 8, 9};
-        System.out.println(search(table, 4));
+        int[] table = {-2,-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(search(table, 3));
     }
 
     /**
@@ -29,10 +29,6 @@ public class BinarySearchIteration {
         // SEARCH...
         // midIndex is supposed to be equal with searched item in a loop
 
-        // the same algorithm works for "foreach" and "for" loop
-        // for (int i : table){...}
-        // for (int i = 0; i < table.length; i++){...}
-
         while (startIndex <= endIndex) {
             int midIndex = (startIndex + endIndex) / 2;  // new midIndex for every iteration
             if (table[midIndex] == searchedValue) {
@@ -42,8 +38,6 @@ public class BinarySearchIteration {
             } else if (table[midIndex] > searchedValue) {
                 endIndex = midIndex - 1;
             }
-
-            new HashMap();
         }
         System.out.println("value not found");
         return -1;
