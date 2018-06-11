@@ -42,7 +42,7 @@ public class SearchPerformance {
     }
 
     private static void wormUpJVM() {
-        out.println("Wait, JVM worm up...");
+        out.println("Wait, JVM warm up...");
         ManualClassLoader.load();
     }
 }
