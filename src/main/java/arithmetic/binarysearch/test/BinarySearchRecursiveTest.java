@@ -17,7 +17,7 @@ public class BinarySearchRecursiveTest {
     public void shouldNotThrowExceptionIfTableNotEmpty() {
         int[] table = {};
         int searchedValue = BinarySearchRecursive.search(table, 1);
-        assertThat(searchedValue, equalTo(-1)); // TODO change places
+        assertThat(searchedValue, equalTo(-1));
     }
 
     @Test
