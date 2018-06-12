@@ -1,10 +1,10 @@
-package training.designpatterns.simplefactory.generators;
+package training.designpatterns.simplefactory.strategies;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 
-public class CurrencyLoanPricingGenerator implements PricingGenerator {
+public class CurrencyLoanPricingStrategy implements PricingStrategy {
     /**
      * some injected services:
      *

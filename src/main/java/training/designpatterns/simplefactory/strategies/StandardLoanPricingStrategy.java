@@ -1,9 +1,9 @@
-package training.designpatterns.simplefactory.generators;
+package training.designpatterns.simplefactory.strategies;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class StandardLoanPricingGenerator implements PricingGenerator {
+public class StandardLoanPricingStrategy implements PricingStrategy {
 
     /**
      * @Inject

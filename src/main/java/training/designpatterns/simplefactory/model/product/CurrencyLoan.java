@@ -1,4 +1,4 @@
-package training.designpatterns.simplefactory.product;
+package training.designpatterns.simplefactory.model.product;
 
 public class CurrencyLoan implements Product {
     private Integer xyz;
