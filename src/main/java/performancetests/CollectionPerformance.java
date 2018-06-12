@@ -1,4 +1,4 @@
-package performance;
+package performancetests;
 
 import datagenerator.model.person.Person;
 import training.java8streams.approach1.FileUtil;

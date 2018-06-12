@@ -2,7 +2,7 @@ package arithmetic;
 
 import arithmetic.bubblesorting.BubbleSorting;
 import datagenerator.model.person.Person;
-import performance.wormupjvm.ManualClassLoader;
+import performancetests.wormupjvm.ManualClassLoader;
 import training.java8streams.approach1.FileUtil;
 
 import java.io.IOException;

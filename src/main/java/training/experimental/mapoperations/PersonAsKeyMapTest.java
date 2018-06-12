@@ -1,13 +1,8 @@
-package training;
+package training.experimental.mapoperations;
 
-import training.designpatterns.simplefactory.generators.PricingGenerator;
-import training.designpatterns.simplefactory.product.Product;
-
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Supplier;
 
 public class PersonAsKeyMapTest {
 

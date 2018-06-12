@@ -2,7 +2,7 @@ package arithmetic;
 
 import arithmetic.binarysearch.BinarySearchIteration;
 import arithmetic.binarysearch.BinarySearchRecursive;
-import performance.wormupjvm.ManualClassLoader;
+import performancetests.wormupjvm.ManualClassLoader;
 
 import java.text.DecimalFormat;
 import java.util.function.Consumer;

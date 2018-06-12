@@ -5,7 +5,7 @@ import java.math.RoundingMode;
 
 
 public class CurrencyLoanPricingGenerator implements PricingGenerator {
-
+/*
     // getType()  ENUM   ....class
 
     // to tworząc przekazując
@@ -14,7 +14,7 @@ public class CurrencyLoanPricingGenerator implements PricingGenerator {
     // CurrencyService currencyService;
     // @Inject
     // ChargeService chargeService;
-
+*/
     @Override
     public BigDecimal calculatePrice() {
         // exchangeRate = currencyService.getEUR();

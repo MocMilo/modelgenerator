@@ -1,4 +1,4 @@
-package training.sorting;
+package training.experimental.sorting;
 
 import datagenerator.model.person.Person;
 import training.java8streams.approach1.FileUtil;

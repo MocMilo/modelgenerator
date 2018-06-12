@@ -1,4 +1,4 @@
-package training.primetask.primenumbers;
+package training.smalltasks.primenumbers;
 
 import java.util.ArrayList;
 import java.util.List;

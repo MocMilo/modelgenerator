@@ -1,9 +1,8 @@
-package training.mapoperations;
+package training.experimental.mapoperations;
 
 import datagenerator.model.person.Person;
 import training.java8streams.approach1.FileUtil;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -42,9 +41,6 @@ public class MapOperations {
         new ArrayList<>(personMap.values()).forEach(System.out::println);
         System.out.println("***********");
 
-        // mapa ma w key hashcode. Jeżeli typem key jest integer to jest to ten integer,
-        // jeżeli typem jest np. string, to key jest również intigerem (wyliczony hashcode z tego
-        // Stringa)
         new ArrayList<>(personMap.keySet()).forEach(x -> System.out.println(x));
 
         System.out.println("ARRAY LIST ADD/REMOVE");

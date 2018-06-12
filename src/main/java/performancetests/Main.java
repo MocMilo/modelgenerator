@@ -1,4 +1,4 @@
-package performance;
+package performancetests;
 
 import java.text.DecimalFormat;
 import java.util.ArrayDeque;

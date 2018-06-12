@@ -6,5 +6,5 @@ import java.math.BigDecimal;
 
 public interface PricingGenerator<T extends Product>  {
  BigDecimal calculatePrice();
-   T getType();
+ //  T getType();
 }

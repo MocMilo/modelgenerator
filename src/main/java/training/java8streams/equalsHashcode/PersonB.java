@@ -49,7 +49,6 @@ public class PersonB extends BasePerson {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(Id, name, age);
     }
 }

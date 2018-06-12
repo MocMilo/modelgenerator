@@ -1,4 +1,4 @@
-package training;
+package training.experimental;
 
 import training.java8streams.equalsHashcode.BasePerson;
 import training.java8streams.equalsHashcode.PersonA;

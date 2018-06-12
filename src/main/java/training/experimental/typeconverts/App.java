@@ -1,4 +1,4 @@
-package training.typeconverts;
+package training.experimental.typeconverts;
 
 public class App {
     public static void main(String[] args) {
