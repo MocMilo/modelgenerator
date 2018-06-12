@@ -4,7 +4,10 @@ import training.designpatterns.simplefactory.product.Product;
 
 import java.math.BigDecimal;
 
-public interface PricingGenerator<T extends Product>  {
- BigDecimal calculatePrice();
- //  T getType();
+public interface PricingGenerator<T extends Product> {
+    /**
+     * This interface is a contract to return result
+     * from some pricing algorithms
+     */
+    BigDecimal calculatePrice();
 }

@@ -17,14 +17,14 @@ public class App {
     public static void main(String[] args) {
 
         // 1. HARDCODED MAP
-        // (simulates part of external service that provides Price Generators)
+        // (simulates part of external service that provides "Pricing Generators")
 
-        Map<Class<? extends Product>, PricingGenerator> mapFromExternalService = new HashMap<>();
+        Map<Class<? extends Product>, PricingGenerator<Product>> mapFromExternalService = new HashMap<>();
         mapFromExternalService.putIfAbsent(CurrencyLoan.class, new CurrencyLoanPricingGenerator());
         mapFromExternalService.putIfAbsent(StandardLoan.class, new StandardLoanPricingGenerator());
 
         // 2. injecting map to pricing factory (flexible way of "configuring" factory)
-      //  PricingGeneratorFactory pricingGeneratorFactory = new PricingGeneratorFactory(mapFromExternalService);
+        PricingGeneratorFactory pricingGeneratorFactory = new PricingGeneratorFactory(mapFromExternalService);
 
         // 3. HARDCODED
         // preparation products to process
@@ -36,9 +36,9 @@ public class App {
 
         // 4. EXECUTION USING FACTORY
         // produces factory of PriceGenerators dependent on current Product in list
-      /*  products.forEach(x -> {
+        products.forEach(x -> {
             PricingGenerator pricingGenerator = pricingGeneratorFactory.getPriceGenerator(x.getClass());
             System.out.println(pricingGenerator.calculatePrice());
-        });*/
+        });
     }
 }
