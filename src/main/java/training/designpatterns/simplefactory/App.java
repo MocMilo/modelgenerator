@@ -22,14 +22,16 @@ public class App {
 
         /**
          * 1. HARDCODED MAP
-         * (simulates part of external service that provides "Pricing Generators")
+         * (simulates part of external service that provides "Pricing algorithms as strategies")
          */
         Map<Class<? extends Product>, PricingStrategy<Product>> mapFromExternalService = new HashMap<>();
         mapFromExternalService.putIfAbsent(CurrencyLoan.class, new CurrencyLoanPricingStrategy());
         mapFromExternalService.putIfAbsent(StandardLoan.class, new StandardLoanPricingStrategy());
 
         /**
-         * 2. injecting map to pricing factory (flexible way of "configuring" factory)
+         * 2. Injecting map to factory
+         *    Factory doesn't have hardcoded map, so factory doesn't have to be changed
+         *    when adding extra strategies (flexible way of "configuring" factory)
          */
         PricingStrategyFactory pricingStrategyFactory = new PricingStrategyFactory(mapFromExternalService);
 
@@ -45,11 +47,13 @@ public class App {
 
         /**
          * 4. EXECUTION USING FACTORY
-         * produces factory of PriceGenerators dependent on current Product in list
+         * foreach Product in list PricingStrategyFactory produces strategy (separate algorithm)
+         * to get pricing result
          */
         products.forEach(x -> {
-            PricingStrategy pricingGenerator = pricingStrategyFactory.getPriceGenerator(x.getClass());
-            System.out.println(pricingGenerator.calculatePrice());
+            PricingStrategy pricingStrategy = pricingStrategyFactory.produce(x.getClass());
+            System.out.println("product" + x.getClass() + "Pricing Strategy result:"
+                    + pricingStrategy.calculatePrice());
         });
     }
 }

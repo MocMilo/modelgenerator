@@ -7,18 +7,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PricingStrategyFactory {
-    private Map<Class<? extends Product>, PricingStrategy<Product>> knownGenerators = new HashMap<>();
-
+    private Map<Class<? extends Product>, PricingStrategy<Product>> knownStrategies = new HashMap<>();
     /**
      * this map maps every class that implements Product Interface to current PricingStrategy Interface
-     * this map  can be @autowired here.
-     * Simulation as if this map was injected in here from bean
+     * this map can be @Autowired here (simulation as if this map was injected here from bean)
      */
-    public PricingStrategyFactory(Map<Class<? extends Product>, PricingStrategy<Product>> generatorMap) {
-        knownGenerators.putAll(generatorMap);
+
+    public PricingStrategyFactory(Map<Class<? extends Product>, PricingStrategy<Product>> strategiesMap) {
+        knownStrategies.putAll(strategiesMap);
     }
 
-    public PricingStrategy getPriceGenerator(Class<? extends Product> type) {
-        return knownGenerators.get(type);
+    public PricingStrategy produce(Class<? extends Product> type) {
+        return knownStrategies.get(type);
     }
 }
