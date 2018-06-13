@@ -1,6 +1,6 @@
 package training.experimental.immutability;
 
-public class PrimitivesMutability {
+public class ReferencesToMethodArguments {
     public static void main(String[] args) {
         System.out.println("-- case 0 ----");
         case0();
