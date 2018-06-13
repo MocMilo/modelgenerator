@@ -1,12 +1,12 @@
 package training.designpatterns.simplefactory;
 
-import training.designpatterns.simplefactory.strategies.CurrencyLoanPricingGenerator;
-import training.designpatterns.simplefactory.strategies.PricingGenerator;
-import training.designpatterns.simplefactory.strategies.StandardLoanPricingGenerator;
-import training.designpatterns.simplefactory.pricing.Pricing;
-import training.designpatterns.simplefactory.product.CurrencyLoan;
-import training.designpatterns.simplefactory.product.Product;
-import training.designpatterns.simplefactory.product.StandardLoan;
+import training.designpatterns.simplefactory.criteria.FundCriteria;
+import training.designpatterns.simplefactory.strategies.AnalysisStrategy;
+import training.designpatterns.simplefactory.strategies.CurrencyAnalysisStrategy;
+import training.designpatterns.simplefactory.strategies.FundAnalysisStrategy;
+import training.designpatterns.simplefactory.result.AnalysisResult;
+import training.designpatterns.simplefactory.criteria.CurrencyCriteria;
+import training.designpatterns.simplefactory.criteria.Criteria;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -20,26 +20,27 @@ public class App {
         // 1. HARDCODED MAP
         // (simulates part of external service that provides Price Generators)
 
-        Map<Class<? extends Product>, PricingGenerator<Product>> mapFromExternalService = new HashMap<>();
-        mapFromExternalService.putIfAbsent(CurrencyLoan.class, new CurrencyLoanPricingGenerator());
-        mapFromExternalService.putIfAbsent(StandardLoan.class, new StandardLoanPricingGenerator());
+        Map<Class<? extends Criteria>, AnalysisStrategy<Criteria>> mapFromExternalService = new HashMap<>();
+        mapFromExternalService.putIfAbsent(CurrencyCriteria.class, new CurrencyAnalysisStrategy());
+        mapFromExternalService.putIfAbsent(FundCriteria.class, new FundAnalysisStrategy());
 
-        // 2. injecting map to pricing factory (flexible way of "configuring" factory)
-        PricingGeneratorFactory pricingFactory = new PricingGeneratorFactory(mapFromExternalService);
+        // 2. injecting map to result factory (flexible way of "configuring" factory)
+        AnalysisFactory analysisFactory = new AnalysisFactory(mapFromExternalService);
 
         // 3. HARDCODED
         // preparation products to process
-        List<Product> products = new ArrayList<>();
-        CurrencyLoan currencyLoan = new CurrencyLoan("Speed Currency Loan", 20);
-        StandardLoan standardLoan = new StandardLoan("standard loan", LocalDate.of(2000, 10, 10));
-        products.add(currencyLoan);
-        products.add(standardLoan);
+        List<Criteria> criteriaList = new ArrayList<>();
+        CurrencyCriteria currencyCriteria = new CurrencyCriteria("Speed Currency Loan", 20);
+        FundCriteria fundCriteria = new FundCriteria("standard loan", LocalDate.of(2000, 10, 10));
+        criteriaList.add(currencyCriteria);
+        criteriaList.add(fundCriteria);
 
         // 4. EXECUTION USING FACTORY
-        // produces factory of PriceGenerators dependent on current Product in list
-        products.forEach(x -> {
-            Pricing pricingObject = pricingFactory.produce(x);
-            System.out.println(pricingObject.getPrice());
+        // produces factory of PriceGenerators dependent on current Criteria in list
+        criteriaList.forEach(x -> {
+            AnalysisResult analysisResultObject = analysisFactory.produce(x);
+
+            System.out.println(analysisResultObject.toString());
         });
     }
 }

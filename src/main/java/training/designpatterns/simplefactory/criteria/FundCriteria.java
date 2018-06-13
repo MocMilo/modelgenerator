@@ -1,8 +1,8 @@
-package training.designpatterns.simplefactory.product;
+package training.designpatterns.simplefactory.criteria;
 
 import java.time.LocalDate;
 
-public class StandardLoan implements Product {
+public class FundCriteria implements Criteria {
     private String name;
     private LocalDate expDate;
 
@@ -14,7 +14,7 @@ public class StandardLoan implements Product {
         return expDate;
     }
 
-    public StandardLoan(String name, LocalDate expDate) {
+    public FundCriteria(String name, LocalDate expDate) {
         this.name = name;
         this.expDate = expDate;
     }

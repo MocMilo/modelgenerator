@@ -10,10 +10,10 @@ public class PersonAsKeyMapTest {
 
         // Map as class idea extension
 /*
-        Map<Class<? extends Product>, Supplier<PricingGenerator>> map = new HashMap<>();
-        map.put(new Product() {}, () -> (PricingGenerator) () -> null);*/
+        Map<Class<? extends Criteria>, Supplier<AnalysisStrategy>> map = new HashMap<>();
+        map.put(new Criteria() {}, () -> (AnalysisStrategy) () -> null);*/
 
-        // public getGenerator(Product p){
+        // public getGenerator(Criteria p){
         // map.get(p.getClass()).get();       //
         // }
 

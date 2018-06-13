@@ -1,6 +1,6 @@
-package training.designpatterns.simplefactory.product;
+package training.designpatterns.simplefactory.criteria;
 
-public class CurrencyLoan implements Product {
+public class CurrencyCriteria implements Criteria {
     private Integer xyz;
     private String name;
 
@@ -12,7 +12,7 @@ public class CurrencyLoan implements Product {
         return xyz;
     }
 
-    public CurrencyLoan(String name, Integer xyz) {
+    public CurrencyCriteria(String name, Integer xyz) {
         this.name = name;
         this.xyz = xyz;
     }

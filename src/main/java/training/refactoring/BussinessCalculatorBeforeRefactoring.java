@@ -4,7 +4,7 @@ import java.util.Optional;
 
 public class BussinessCalculatorBeforeRefactoring {
 
-    /*public static double calculatePrice(Optional<Integer> valueA, Optional<Integer> valueB, int threshold, StringBuilder fetchXml) {
+    /*public static double get(Optional<Integer> valueA, Optional<Integer> valueB, int threshold, StringBuilder fetchXml) {
         if (valueA.isPresent() && valueB.isPresent()) {
             if (valueA.get() >= threshold) {
                 fetchXml = new StringBuilder("<fetch>");
