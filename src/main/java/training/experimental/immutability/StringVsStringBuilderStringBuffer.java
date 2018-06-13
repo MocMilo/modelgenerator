@@ -21,7 +21,7 @@ public class StringVsStringBuilderStringBuffer {
 
         System.out.println(sb.toString());
 
-        StringBuffer sbf = new StringBuffer("strigBuffer");
+        StringBuffer sbf = new StringBuffer("stringBuffer");
         sbf.append("SSS");
         sbf.append(sb);
         System.out.println(sbf.toString());
