@@ -21,6 +21,10 @@ public final class ImmutablePerson {
         this.points = new ArrayList<>(points);
     }
 
+    public Point getPoint() {
+        return new Point(point);  // defensive copy of point by copy constructor
+    }
+
     public String getName() {
         return name;
     }

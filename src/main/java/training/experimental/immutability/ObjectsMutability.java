@@ -26,6 +26,8 @@ public class ObjectsMutability {
         // person.getAge()....                    // no methods, small int cannot change
         person.getPoints().get(0).x = 99;         // point is mutable
 
+        person.getPoint().x = 5555555;             // changing point field
+
         System.out.println("object before doMath() " + point1);              // before math
 
         person.doMath(point1);                                               // doMath()
@@ -43,5 +45,6 @@ public class ObjectsMutability {
         System.out.println(person.getName());
         System.out.println(person.getNumbers());
         System.out.println(person.getPoints().get(0));  // is x = 99  point was changed!
+        System.out.println(person.getPoint());          // is x = 1?  no x =5555555 point was changed!
     }
 }

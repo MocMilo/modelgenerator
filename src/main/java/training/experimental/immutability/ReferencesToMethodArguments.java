@@ -12,6 +12,10 @@ public class ReferencesToMethodArguments {
         case3();
         System.out.println("-- case 4 ----");
         case4();
+        System.out.println("-- case 5 ----");
+        case5();
+        System.out.println("-- case 6 ----");
+        case6();
     }
 
     private static void switchIntsWithoutTemp(int a, int b) {
@@ -42,6 +46,18 @@ public class ReferencesToMethodArguments {
         a = b;
         b = temp;
         return b;
+    }
+
+    private static void switchIntegersWithoutTemp(Integer a, Integer b) {
+        System.out.println("switchIntegersWithoutTemp");
+        b = a;
+        System.out.println("b inside switch method:" + b);
+    }
+
+    private static void passIntegerWithReference(Integer a) {
+        System.out.println("passIntegerWithReference");
+        a = 555;
+        System.out.println("a inside switch method:" + a); // prints 10 here, outside method b = 20
     }
 
     private static void case0() {
@@ -117,6 +133,30 @@ public class ReferencesToMethodArguments {
 
         System.out.println("b = " + switchIntegersReturn(a, b) + " by return"); // by return b = 10
     }
+    private static void case5() {
+
+        Integer a = 10;
+        Integer b = 20;
+
+        System.out.println("a = " + a + " before switch"); // a = 10
+        System.out.println("b = " + b + " before switch"); // b = 20
+
+        switchIntegersWithoutTemp(a, b);
+
+        System.out.println("a = " + a + " by reference");  // a = 10
+        System.out.println("b = " + b + " by reference");  // b = 20
+    }
+
+    private static void case6() {
+        Integer a = 10;
+
+        System.out.println("a = " + a + " before passing as reference"); // a = 10
+
+        passIntegerWithReference(a);
+
+        System.out.println("a = " + a + " by reference");    // a = 10 not 555
+    }
+
 
 
 }
