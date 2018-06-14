@@ -1,6 +1,5 @@
 package arithmetic.binarysearch;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 public class BinarySearchIteration {

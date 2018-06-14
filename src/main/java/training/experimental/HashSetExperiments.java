@@ -18,7 +18,7 @@ public class HashSetExperiments {
         PersonA personA = new PersonA(1,"aaa", 25); //
         PersonB personB = new PersonB(1,"aaa", 25);
 
-        // the same objects but not equal hashcode
+        // the same hashcode when different types
         System.out.println(personA.hashCode());
         System.out.println(personB.hashCode());
 
