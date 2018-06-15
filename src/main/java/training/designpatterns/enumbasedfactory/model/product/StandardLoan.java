@@ -1,4 +1,4 @@
-package training.designpatterns.simplefactory.model.product;
+package training.designpatterns.enumbasedfactory.model.product;
 
 import java.time.LocalDate;
 

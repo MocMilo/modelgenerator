@@ -1,4 +1,4 @@
-package training.designpatterns.simplefactory.strategies;
+package training.designpatterns.enumbasedfactory.strategies;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

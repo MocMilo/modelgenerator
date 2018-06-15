@@ -1,4 +1,4 @@
-package training.designpatterns.simplefactory.model.product;
+package training.designpatterns.mapbasedfactory.product;
 
 public interface Product {
 /**
